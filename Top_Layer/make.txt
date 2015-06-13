@@ -1,0 +1,253 @@
+bison -d parse.y
+flex lex.l
+g++    -c -o condition.o condition.cpp
+g++    -c -o condition_and.o condition_and.cpp
+g++    -c -o condition_or.o condition_or.cpp
+g++    -c -o condition_op_const.o condition_op_const.cpp
+g++    -c -o condition_op_column.o condition_op_column.cpp
+g++    -c -o node.o node.cpp
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:20:11: error: declaration of ‘class keytype’
+ template <class keytype> struct node{
+           ^
+../File_and_Access_Layer/bptree.hpp:18:11: error:  shadows template parm ‘class keytype’
+ template <class keytype> class bptree{
+           ^
+../File_and_Access_Layer/bptree.hpp:98:40: error: ‘typename bptree<keytype>::node’ names ‘template<class keytype> template<class keytype> struct bptree<keytype>::node’, which is not a type
+  typename bptree<keytype>::node<keytype> *insert(keytype key, blk_addr recordid);
+                                        ^
+../File_and_Access_Layer/bptree.hpp:101:40: error: ‘typename bptree<keytype>::node’ names ‘template<class keytype> template<class keytype> struct bptree<keytype>::node’, which is not a type
+  typename bptree<keytype>::node<keytype> *remove(keytype key);
+                                        ^
+../File_and_Access_Layer/bptree.hpp:152:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::read_node(blk_addr baddr){
+                          ^
+../File_and_Access_Layer/bptree.hpp:152:41: error: prototype for ‘node* bptree<keytype>::read_node(blk_addr)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::read_node(blk_addr baddr){
+                                         ^
+../File_and_Access_Layer/bptree.hpp:47:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::read_node(blk_addr)
+  node<keytype> *read_node(blk_addr baddr);
+                 ^
+../File_and_Access_Layer/bptree.hpp:217:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::dequeue(){
+                          ^
+../File_and_Access_Layer/bptree.hpp:217:41: error: prototype for ‘node* bptree<keytype>::dequeue()’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::dequeue(){
+                                         ^
+../File_and_Access_Layer/bptree.hpp:50:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::dequeue()
+  node<keytype> *dequeue();
+                 ^
+../File_and_Access_Layer/bptree.hpp:361:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::find_leaf(keytype key){
+                          ^
+../File_and_Access_Layer/bptree.hpp:361:41: error: prototype for ‘node* bptree<keytype>::find_leaf(keytype)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::find_leaf(keytype key){
+                                         ^
+../File_and_Access_Layer/bptree.hpp:53:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::find_leaf(keytype)
+  node<keytype> *find_leaf(keytype key);
+                 ^
+../File_and_Access_Layer/bptree.hpp:452:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::make_node(){
+                          ^
+../File_and_Access_Layer/bptree.hpp:452:41: error: prototype for ‘node* bptree<keytype>::make_node()’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::make_node(){
+                                         ^
+../File_and_Access_Layer/bptree.hpp:60:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::make_node()
+  node<keytype> *make_node();
+                 ^
+../File_and_Access_Layer/bptree.hpp:483:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::make_leaf(){
+                          ^
+../File_and_Access_Layer/bptree.hpp:483:41: error: prototype for ‘node* bptree<keytype>::make_leaf()’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::make_leaf(){
+                                         ^
+../File_and_Access_Layer/bptree.hpp:61:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::make_leaf()
+  node<keytype> *make_leaf();
+                 ^
+../File_and_Access_Layer/bptree.hpp:508:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_leaf(node<keytype> *leaf, keytype key, blk_addr recordid){
+                          ^
+../File_and_Access_Layer/bptree.hpp:508:41: error: prototype for ‘node* bptree<keytype>::insert_into_leaf(bptree<keytype>::node<keytype>*, keytype, blk_addr)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_leaf(node<keytype> *leaf, keytype key, blk_addr recordid){
+                                         ^
+../File_and_Access_Layer/bptree.hpp:63:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::insert_into_leaf(bptree<keytype>::node<keytype>*, keytype, blk_addr)
+  node<keytype> *insert_into_leaf(node<keytype> *leaf, keytype key, blk_addr recordid);
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:532:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_leaf_after_splitting(node<keytype> *leaf, keytype key, blk_addr recordid){
+                          ^
+../File_and_Access_Layer/bptree.hpp:532:41: error: prototype for ‘node* bptree<keytype>::insert_into_leaf_after_splitting(bptree<keytype>::node<keytype>*, keytype, blk_addr)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_leaf_after_splitting(node<keytype> *leaf, keytype key, blk_addr recordid){
+                                         ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:64:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::insert_into_leaf_after_splitting(bptree<keytype>::node<keytype>*, keytype, blk_addr)
+  node<keytype> *insert_into_leaf_after_splitting(node<keytype> *leaf, keytype key, blk_addr recordid);
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:602:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_node(node<keytype> *n, 
+                          ^
+../File_and_Access_Layer/bptree.hpp:602:41: error: prototype for ‘node* bptree<keytype>::insert_into_node(bptree<keytype>::node<keytype>*, int, keytype, bptree<keytype>::node<keytype>*)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_node(node<keytype> *n, 
+                                         ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:65:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::insert_into_node(bptree<keytype>::node<keytype>*, int, keytype, bptree<keytype>::node<keytype>*)
+  node<keytype> *insert_into_node(node<keytype> *n, int left_index, 
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:620:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_node_after_splitting(node<keytype> *old_node, int left_index, 
+                          ^
+../File_and_Access_Layer/bptree.hpp:620:41: error: prototype for ‘node* bptree<keytype>::insert_into_node_after_splitting(bptree<keytype>::node<keytype>*, int, keytype, bptree<keytype>::node<keytype>*)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_node_after_splitting(node<keytype> *old_node, int left_index, 
+                                         ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:67:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::insert_into_node_after_splitting(bptree<keytype>::node<keytype>*, int, keytype, bptree<keytype>::node<keytype>*)
+  node<keytype> *insert_into_node_after_splitting(node<keytype> *old_node, int left_index, 
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:705:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_parent(node<keytype> *left, keytype key, node<keytype> *right){
+                          ^
+../File_and_Access_Layer/bptree.hpp:705:41: error: prototype for ‘node* bptree<keytype>::insert_into_parent(bptree<keytype>::node<keytype>*, keytype, bptree<keytype>::node<keytype>*)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_parent(node<keytype> *left, keytype key, node<keytype> *right){
+                                         ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:69:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::insert_into_parent(bptree<keytype>::node<keytype>*, keytype, bptree<keytype>::node<keytype>*)
+  node<keytype> *insert_into_parent(node<keytype> *left, keytype key, node<keytype> *right);
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:746:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_new_root(node<keytype> *left, keytype key, node<keytype> *right){
+                          ^
+../File_and_Access_Layer/bptree.hpp:746:41: error: prototype for ‘node* bptree<keytype>::insert_into_new_root(bptree<keytype>::node<keytype>*, keytype, bptree<keytype>::node<keytype>*)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::insert_into_new_root(node<keytype> *left, keytype key, node<keytype> *right){
+                                         ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:70:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::insert_into_new_root(bptree<keytype>::node<keytype>*, keytype, bptree<keytype>::node<keytype>*)
+  node<keytype> *insert_into_new_root(node<keytype> *left, keytype key, node<keytype> *right);
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:766:26: error: ‘node’ is not a template
+ template <class keytype> node<keytype> *bptree<keytype>::start_new_tree(keytype key, blk_addr recordid){
+                          ^
+../File_and_Access_Layer/bptree.hpp:766:41: error: prototype for ‘node* bptree<keytype>::start_new_tree(keytype, blk_addr)’ does not match any in class ‘bptree<keytype>’
+ template <class keytype> node<keytype> *bptree<keytype>::start_new_tree(keytype key, blk_addr recordid){
+                                         ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:71:17: error: candidate is: bptree<keytype>::node<keytype>* bptree<keytype>::start_new_tree(keytype, blk_addr)
+  node<keytype> *start_new_tree(keytype key, blk_addr recordid);
+                 ^
+In file included from ../File_and_Access_Layer/table_iterator.hpp:5:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/bptree.hpp:793:52: error: non-template ‘node’ used as template
+ template <class keytype> typename bptree<keytype>::node<keytype> *bptree<keytype>::insert(keytype key, blk_addr recordid){
+                                                    ^
+../File_and_Access_Layer/bptree.hpp:793:52: note: use ‘bptree<keytype>::template node’ to indicate that it is a template
+In file included from ../File_and_Access_Layer/table_iterator.hpp:7:0,
+                 from ../File_and_Access_Layer/includes.hpp:7,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/table_scanner.hpp:15:2: error: expected unqualified-id before ‘;’ token
+ };
+  ^
+In file included from ../File_and_Access_Layer/includes.hpp:7:0,
+                 from ../File_and_Access_Layer/file_and_access_layer.hpp:4,
+                 from node_join.h:7,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/table_iterator.hpp:9:69: error: expected class-name before ‘{’ token
+ template <class keytype> class table_iterator : public table_scanner{
+                                                                     ^
+In file included from node_join.h:7:0,
+                 from includes.h:5,
+                 from node.cpp:4:
+../File_and_Access_Layer/file_and_access_layer.hpp:30:2: error: ‘table_scanner’ does not name a type
+  table_scanner *scan_table(const char *tname);
+  ^
+../File_and_Access_Layer/file_and_access_layer.hpp:36:2: error: ‘table_scanner’ does not name a type
+  table_scanner *search_from_index(condition_op_const &cnd);
+  ^
+In file included from includes.h:5:0,
+                 from node.cpp:4:
+node_join.h:21:2: error: ‘table_scanner’ does not name a type
+  table_scanner* it;
+  ^
+In file included from includes.h:6:0,
+                 from node.cpp:4:
+node_table.h:14:2: error: invalid use of template-name ‘table_iterator’ without an argument list
+  table_iterator* it;
+  ^
+make: *** [node.o] Error 1

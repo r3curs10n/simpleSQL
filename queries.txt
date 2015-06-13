@@ -1,0 +1,25 @@
+CREATE DATABASE db;
+USE DATABASE db;
+CREATE TABLE tbl (id INT, salary INT, water FLOAT);
+
+CREATE TABLE tbl2 (id INT, height INT);
+
+INSERT INTO tbl2 VALUES(5, 6);
+INSERT INTO tbl2 VALUES(6, 6);
+
+SELECT tbl2.id, tbl2.height FROM tbl2;
+
+//Insert values into tbl from text.txt
+
+SELECT tbl.id, tbl.salary, tbl.water FROM tbl WHERE tbl.id < 50;
+
+SELECT tbl.id, tbl.salary, tbl.water, tbl2.id, tbl2.height FROM tbl,tbl2 WHERE tbl.id = tbl2.id;
+
+CREATE INDEX tbl id;
+USE DATABASE db;
+
+SELECT tbl.id, tbl.salary, tbl.water FROM tbl WHERE tbl.id < 50;
+SELECT tbl.id, tbl.salary, tbl.water, tbl2.id, tbl2.height FROM tbl,tbl2 WHERE tbl.id = tbl2.id;
+
+
+

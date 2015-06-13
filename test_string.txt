@@ -1,0 +1,20 @@
+CREATE DATABASE srs;
+USE DATABASE srs;
+CREATE TABLE tbl1 (id INT, name STRING);
+INSERT INTO tbl1 VALUES (1, 'Shyamal');
+INSERT INTO tbl1 VALUES (2, 'Poddar');
+INSERT INTO tbl1 VALUES (3, 'Jajoo');
+INSERT INTO tbl1 VALUES (4, 'Anna');
+INSERT INTO tbl1 VALUES (5, 'Hitesh');
+INSERT INTO tbl1 VALUES (6, 'Aancha');
+INSERT INTO tbl1 VALUES (7, 'Basarge');
+SELECT tbl1.id, tbl1.name FROM tbl1 WHERE tbl1.name = 'Poddar';
+SELECT tbl1.id , tbl1.name FROM tbl1 WHERE tbl1.name > 'Poddar';
+CREATE INDEX tbl1 name;
+USE DATABASE srs;
+SELECT tbl1.id, tbl1.name FROM tbl1 WHERE tbl1.name = 'Poddar';
+SELECT tbl1.id , tbl1.name FROM tbl1 WHERE tbl1.name > 'Poddar';
+SELECT tbl1.id , tbl1.name FROM tbl1 WHERE tbl1.name < 'Poddar';
+DROP INDEX tbl1 name;
+USE DATABASE srs;
+
